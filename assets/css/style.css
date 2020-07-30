@@ -166,6 +166,7 @@ sub { bottom: -.25em; }
 .wrapper{
   width: 86%;
   margin: 0 auto;
+
 }
 header .wrapper{
   position: relative;
@@ -273,4 +274,83 @@ h1 a span{
   left: 50%;
   bottom: 0;
   opacity: .5;
+}
+.info{
+  background-color: #f2f2f2;
+}
+.info .wrapper{
+  padding: 90px 0px 90px 0px;
+}
+.info .wrapper ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+}
+.info .wrapper ul li{
+width: 47%;
+
+}
+.info .wrapper ul li img{
+  width: 100%;
+}
+.img_info{
+  padding: 45px;
+  background-color: rgb(255 255 255);
+  font-family: 'Roboto', sans-serif;
+  
+}
+.img_info h3{
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ddd0c8;
+  position: relative;
+  padding-bottom: 10px;
+  
+
+}
+.img_info h3::after{
+  content: '';
+  width:50%;
+  height: 2px;
+  background-color: grey;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  bottom: 0;
+  opacity: .5;
+  
+}
+.img_info h2{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 35px;
+  font-size: 20px;
+}
+.img_info p{
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
+  text-align: left;
+  color: gray;
+  line-height: 30px;
+  opacity: .8;
+  padding-bottom: 40px;
+}
+.img_info a{
+  border: 1px solid gray;;
+  display: block;
+  width: 130px;
+  height: 40px;
+  text-align: center;
+  position: relative;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  bottom: 0px;
+  line-height: 40px;
+  text-decoration: none;
+  color: black;
+
 }
