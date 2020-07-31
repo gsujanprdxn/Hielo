@@ -15,7 +15,7 @@
     1.3. Font class declaration
   2. Body
   3. Header / .header
-    2.1. Navigation / .navbar
+    3.1. Navigation / .navbar
   4. Content / .content
     4.1. Left column / .leftcolumn
     4.2. Right column / .rightcolumn
@@ -157,9 +157,7 @@ sub { bottom: -.25em; }
 }
 
 /* ++++++ */
-.container{
-  width: 100%;
-}
+.container{width: 100%;}
 
 .wrapper{
   width: 86%;
@@ -174,86 +172,79 @@ header .wrapper{
 nav{
   width: 100px;
   height: 200px;
+  display: flex;
   position: absolute;
-  background: inherit;
   top: 0;
   right: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  background: inherit;
 }
 
 nav li{
-  list-style: none;
   margin: 10px;
+  list-style: none;
   text-align: right; 
 }
 
 nav li a{
-  text-decoration: none;
-  font-size: 15px;
   color: #eee;
+  font-size: 15px;
   font-weight: 300;
+  font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
+  text-decoration: none;
   text-transform: uppercase;
   visibility: hidden;
-  font-family: 'Roboto', sans-serif;
 }
 
 .hamberger{
-  position: relative;
-  top: 20px;
+  position: absolute;
+  top: 38px;
   right: 10px;
   z-index: 1;
 }
 
 .hamberger input
 {
-  display: block;
   width: 20px;
   height: 32px;
+  display: block;
   position: absolute;
   cursor: pointer;
   opacity: 0;
   z-index: 2; 
 }
-.hamberger span
-{
-  display: block;
+
+.hamberger .line{
   width: 33px;
   height: 4px;
+  border-radius: 3px;
   margin-bottom: 5px;
+  display: block;
   position: relative;
   background: #cdcdcd;
-  border-radius: 3px;
   z-index: 1;
   transform-origin: 2px 2px;
 }
-.hamberger span:first-child
-{
-  transform-origin: 0% 0%;
-}
-.hamberger span:last-child(2)
-{
-  transform-origin: 0% 100%;
-}
-.hamberger input:checked ~ span
-{
+
+.hamberger .line:first-child{transform-origin: 0% 0%;}
+.hamberger .line:last-child(2){transform-origin: 0% 100%;}
+
+.hamberger input:checked ~ .line{
+  background: #f0eeee;
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: #f0eeee;
 }
+
 .hamberger input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-.hamberger input:checked ~ span:nth-last-child(2)
-{
-  transform: rotate(-45deg);
-}
+.hamberger input:checked ~ span:nth-last-child(2){transform: rotate(-45deg);}
 
 h1{
   position: absolute;
@@ -261,6 +252,7 @@ h1{
   left:18px;
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
+  z-index: 1;
 }
 
 h1 a{
@@ -274,28 +266,35 @@ h1 a span{
   font-weight: 700;
 }
 
+.banner{
+  position: relative;
+}
+
 .banner ul li{
   width: 100%;
   height: 655px;
   background-image: url(../../images/slide01.jpg);
+  filter: brightness(50%);
   background-size: cover;
   background-repeat: no-repeat;
   list-style: none;
 }
 
 .banner ul li:last-child{
-display: none;
+  display: none;
 }
 
 .banner ul li h2{
-  font-size: 82px;
-  color: wheat;
-  text-align: center;
   position: absolute;
   transform: translate(-50%,-50%);
   left: 50%;
-  bottom: 40%;
+  bottom: 30%;
+  color:white;
+  font-size: 110px;
+  font-weight: 100;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
+  
 }
 
 .banner ul li > span{
@@ -316,7 +315,7 @@ display: none;
   color:white !important;
 }
 
-.banner ul li p::after{
+.banner ul li span::after{
   content: '';
   width:200px;
   height: 2px;
@@ -326,6 +325,21 @@ display: none;
   left: 50%;
   bottom: 0;
   opacity: .5;
+}
+.DotHolder{
+  position: absolute;
+  bottom: 20px;
+  margin-left: 45%;
+  color: transparent;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .info{background-color: #f2f2f2;}
@@ -541,4 +555,29 @@ footer ul li a{
   text-decoration: none;
   color: white;
   font-size: 30px;
+
+}
+
+a[title="twitter"]::before{
+  content: "\f099";
+  font-family: FontAwesome;
+}
+
+a[title="twitter"]:hover,a[title="facebook"]:hover,a[title="Instagram"]:hover,a[title="mailbox"]:hover{
+  color: aqua;
+}
+
+a[title="facebook"]::before{
+  content: "\f09a";
+  font-family: FontAwesome;
+}
+
+a[title="Instagram"]::before{
+  content: "\f16d";
+  font-family: FontAwesome;
+}
+
+a[title="mailbox"]::before{
+  content: "\f0e0";
+  font-family: FontAwesome;
 }
